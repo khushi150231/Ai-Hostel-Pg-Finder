@@ -1,0 +1,189 @@
+{
+  "info": {
+    "name": "StayNear - AI PG & Hostel Finder Vadodara API",
+    "description": "Postman Collection for Stage 2 Backend APIs - StayNear Vadodara",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000/api",
+      "type": "string"
+    },
+    {
+      "key": "studentToken",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "adminToken",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "sampleHostelId",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Auth - Register Student",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fullName\": \"Kavita Sharma\",\n  \"email\": \"kavita@student.ac.in\",\n  \"phone\": \"9876543219\",\n  \"password\": \"password123\",\n  \"college\": \"Parul University\",\n  \"course\": \"B.Tech CSE\",\n  \"year\": \"1st Year\",\n  \"gender\": \"female\",\n  \"budgetMax\": 7500\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/auth/register", "host": ["{{baseUrl}}"], "path": ["auth", "register"] }
+      }
+    },
+    {
+      "name": "2. Auth - Login Student",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"student@test.com\",\n  \"password\": \"password\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/auth/login", "host": ["{{baseUrl}}"], "path": ["auth", "login"] }
+      }
+    },
+    {
+      "name": "3. Auth - Get Current User",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{studentToken}}" }],
+        "url": { "raw": "{{baseUrl}}/auth/me", "host": ["{{baseUrl}}"], "path": ["auth", "me"] }
+      }
+    },
+    {
+      "name": "4. Hostels - Get All Hostels",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/hostels?page=1&limit=10", "host": ["{{baseUrl}}"], "path": ["hostels"] }
+      }
+    },
+    {
+      "name": "5. Hostels - Search with Complex Filters",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/hostels/search?budgetMax=7000&gender=boys&roomType=double&amenities=wifi,food&college=parul&radius=5",
+          "host": ["{{baseUrl}}"],
+          "path": ["hostels", "search"],
+          "query": [
+            { "key": "budgetMax", "value": "7000" },
+            { "key": "gender", "value": "boys" },
+            { "key": "roomType", "value": "double" },
+            { "key": "amenities", "value": "wifi,food" },
+            { "key": "college", "value": "parul" },
+            { "key": "radius", "value": "5" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "6. Hostels - Geolocation Nearby Search (2dsphere)",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/hostels/nearby?latitude=22.2965&longitude=73.0169&radius=3",
+          "host": ["{{baseUrl}}"],
+          "path": ["hostels", "nearby"],
+          "query": [
+            { "key": "latitude", "value": "22.2965" },
+            { "key": "longitude", "value": "73.0169" },
+            { "key": "radius", "value": "3" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "7. Hostels - Create New Hostel (Owner/Admin)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{adminToken}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Royal Heritage PG\",\n  \"description\": \"Newly built modern accommodation near MS University\",\n  \"hostelType\": \"PG\",\n  \"gender\": \"boys\",\n  \"phone\": \"9876543299\",\n  \"area\": \"Fatehgunj\",\n  \"city\": \"Vadodara\",\n  \"latitude\": 22.321,\n  \"longitude\": 73.184,\n  \"monthlyRent\": 4500,\n  \"securityDeposit\": 9000,\n  \"amenities\": [\"wifi\", \"food\", \"ac\", \"cctv\"],\n  \"food\": { \"available\": true, \"included\": true, \"type\": \"Veg\" }\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/hostels", "host": ["{{baseUrl}}"], "path": ["hostels"] }
+      }
+    },
+    {
+      "name": "8. Favourites - Add to Bookmark",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Authorization", "value": "Bearer {{studentToken}}" }],
+        "url": { "raw": "{{baseUrl}}/favourites/{{sampleHostelId}}", "host": ["{{baseUrl}}"], "path": ["favourites", "{{sampleHostelId}}"] }
+      }
+    },
+    {
+      "name": "9. Favourites - Get Shortlisted Hostels",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Authorization", "value": "Bearer {{studentToken}}" }],
+        "url": { "raw": "{{baseUrl}}/favourites", "host": ["{{baseUrl}}"], "path": ["favourites"] }
+      }
+    },
+    {
+      "name": "10. Favourites - Remove from Bookmark",
+      "request": {
+        "method": "DELETE",
+        "header": [{ "key": "Authorization", "value": "Bearer {{studentToken}}" }],
+        "url": { "raw": "{{baseUrl}}/favourites/{{sampleHostelId}}", "host": ["{{baseUrl}}"], "path": ["favourites", "{{sampleHostelId}}"] }
+      }
+    },
+    {
+      "name": "11. Reviews - Post Resident Review",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{studentToken}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"hostelId\": \"{{sampleHostelId}}\",\n  \"rating\": 5,\n  \"comment\": \"Exceptional food quality and warden is very cooperative for college transit.\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/reviews", "host": ["{{baseUrl}}"], "path": ["reviews"] }
+      }
+    },
+    {
+      "name": "12. Enquiries - Send Inquiry to Owner",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{studentToken}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"hostelId\": \"{{sampleHostelId}}\",\n  \"roomType\": \"Double Sharing\",\n  \"message\": \"Interested in joining from 1st of next month. Can I schedule a physical inspection?\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/enquiries", "host": ["{{baseUrl}}"], "path": ["enquiries"] }
+      }
+    },
+    {
+      "name": "13. Admin - Verify Hostel Listing",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{adminToken}}" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"verificationStatus\": \"VERIFIED\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/admin/hostels/{{sampleHostelId}}/verify", "host": ["{{baseUrl}}"], "path": ["admin", "hostels", "{{sampleHostelId}}", "verify"] }
+      }
+    }
+  ]
+}
