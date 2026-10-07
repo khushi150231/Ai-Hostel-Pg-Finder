@@ -58,11 +58,11 @@ const SearchBar = ({ onSearch, compact = false }) => {
     <div className={`w-full ${compact ? '' : 'max-w-4xl mx-auto'}`}>
       {/* Tabs */}
       {!compact && (
-        <div className="flex gap-1 mb-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-1 w-fit mx-auto">
+        <div className="flex gap-1 mb-4 bg-dark-900/70 backdrop-blur-md border border-white/15 rounded-2xl p-1 w-fit mx-auto shadow-lg">
           <button
             onClick={() => setActiveTab('basic')}
             className={`flex items-center gap-2 px-5 py-2 rounded-xl text-sm font-medium transition-all ${
-              activeTab === 'basic' ? 'bg-white/10 text-white border border-white/15' : 'text-gray-400 hover:text-white'
+              activeTab === 'basic' ? 'bg-white/15 text-white border border-white/20 shadow-sm' : 'text-gray-300 hover:text-white'
             }`}
           >
             <Search className="w-4 h-4" /> Quick Search
@@ -70,7 +70,7 @@ const SearchBar = ({ onSearch, compact = false }) => {
           <button
             onClick={() => setActiveTab('ai')}
             className={`flex items-center gap-2 px-5 py-2 rounded-xl text-sm font-medium transition-all ${
-              activeTab === 'ai' ? 'bg-primary-500/20 text-primary-300 border border-primary-500/30' : 'text-gray-400 hover:text-white'
+              activeTab === 'ai' ? 'bg-primary-500/30 text-primary-200 border border-primary-500/40 shadow-sm' : 'text-gray-300 hover:text-white'
             }`}
           >
             <Sparkles className="w-4 h-4" /> Ask AI
@@ -81,7 +81,7 @@ const SearchBar = ({ onSearch, compact = false }) => {
       {/* Basic Search */}
       {(activeTab === 'basic' || compact) && (
         <form onSubmit={handleSearch}>
-          <div className={`flex ${compact ? 'flex-row gap-2' : 'flex-col sm:flex-row gap-3'} bg-white/8 backdrop-blur-md border border-white/15 rounded-2xl p-3 shadow-2xl shadow-black/30`}>
+          <div className={`flex ${compact ? 'flex-row gap-2' : 'flex-col sm:flex-row gap-3'} bg-dark-900/75 backdrop-blur-xl border border-white/20 rounded-2xl p-3 shadow-2xl shadow-black/50`}>
             {/* Location */}
             <div className={`flex items-center gap-2.5 flex-1 px-3 py-2 ${!compact ? 'border-b sm:border-b-0 sm:border-r border-white/10' : ''}`}>
               <MapPin className="w-5 h-5 text-primary-400 flex-shrink-0" />
@@ -90,7 +90,7 @@ const SearchBar = ({ onSearch, compact = false }) => {
                 placeholder="Location or College..."
                 value={filters.location}
                 onChange={(e) => setFilters((p) => ({ ...p, location: e.target.value }))}
-                className="bg-transparent text-white placeholder-gray-500 text-sm w-full focus:outline-none"
+                className="bg-transparent text-white placeholder-gray-400 text-sm w-full focus:outline-none"
               />
             </div>
 
@@ -104,7 +104,7 @@ const SearchBar = ({ onSearch, compact = false }) => {
                     onChange={(e) => setFilters((p) => ({ ...p, maxBudget: e.target.value }))}
                     className="bg-transparent text-sm w-full focus:outline-none appearance-none cursor-pointer text-white [&>option]:bg-gray-900 [&>option]:text-white"
                   >
-                    <option value="" className="text-gray-500">Max Budget</option>
+                    <option value="" className="text-gray-400">Max Budget</option>
                     <option value="3000">Under ₹3,000</option>
                     <option value="5000">Under ₹5,000</option>
                     <option value="7000">Under ₹7,000</option>
@@ -146,7 +146,7 @@ const SearchBar = ({ onSearch, compact = false }) => {
               </>
             )}
 
-            <button type="submit" className="btn-primary whitespace-nowrap flex-shrink-0">
+            <button type="submit" className="btn-primary whitespace-nowrap flex-shrink-0 shadow-lg shadow-primary-600/30">
               <Search className="w-4 h-4" />
               {compact ? '' : 'Find My Hostel'}
             </button>
@@ -157,7 +157,7 @@ const SearchBar = ({ onSearch, compact = false }) => {
       {/* AI Search */}
       {activeTab === 'ai' && !compact && (
         <form onSubmit={handleAiSearch}>
-          <div className="bg-white/8 backdrop-blur-md border border-primary-500/30 rounded-2xl p-3 shadow-2xl shadow-primary-900/20">
+          <div className="bg-dark-900/80 backdrop-blur-xl border border-primary-500/40 rounded-2xl p-4 shadow-2xl shadow-primary-950/40">
             <div className="flex items-start gap-3">
               <Sparkles className="w-5 h-5 text-primary-400 flex-shrink-0 mt-2.5" />
               <textarea
@@ -165,14 +165,14 @@ const SearchBar = ({ onSearch, compact = false }) => {
                 placeholder="I need a boys PG near Parul University under ₹7,000 with food and Wi-Fi..."
                 value={aiQuery}
                 onChange={(e) => setAiQuery(e.target.value)}
-                className="flex-1 bg-transparent text-white placeholder-gray-500 text-sm focus:outline-none resize-none"
+                className="flex-1 bg-transparent text-white placeholder-gray-400 text-sm focus:outline-none resize-none leading-relaxed"
               />
-              <button type="submit" className="btn-primary self-end flex-shrink-0">
+              <button type="submit" className="btn-primary self-end flex-shrink-0 shadow-lg shadow-primary-600/30">
                 <Sparkles className="w-4 h-4" /> Ask AI
               </button>
             </div>
           </div>
-          <p className="text-center text-gray-600 text-xs mt-2">
+          <p className="text-center text-gray-400 text-xs mt-2.5">
             Describe what you're looking for in plain English. Our AI will find the best matches.
           </p>
         </form>

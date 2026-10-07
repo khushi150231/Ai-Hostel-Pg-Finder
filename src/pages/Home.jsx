@@ -73,16 +73,17 @@ export const Home = () => {
     <div className="min-h-screen bg-dark-900">
       {/* 1. CINEMATIC HERO SECTION */}
       <section className="relative min-h-[90vh] flex items-center justify-center pt-24 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Cinematic Background Image with Gradient Overlay */}
-        <div className="absolute inset-0 z-0">
+        {/* Cinematic Modern Hero Background with Cozy Room Aesthetic */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=1920&q=85"
-            alt="Student Accommodation Vadodara"
-            className="w-full h-full object-cover object-center scale-105 animate-pulse-slow filter brightness-40"
+            src="/hero-room.png"
+            alt="Modern Student Accommodation Vadodara"
+            className="w-full h-full object-cover object-center scale-100 filter brightness-[0.88] contrast-[1.03] transition-all duration-700"
           />
-          {/* Multi-layered dark gradients for readability & aesthetic depth */}
-          <div className="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/80 to-dark-900/60" />
-          <div className="absolute inset-0 bg-radial-gradient from-transparent via-dark-900/50 to-dark-900" />
+          {/* Multi-layered refined gradients for text readability and warm ambiance */}
+          <div className="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/50 to-dark-900/35" />
+          <div className="absolute inset-0 bg-radial-gradient from-transparent via-dark-900/20 to-dark-900/70" />
+          <div className="absolute inset-0 bg-black/15 backdrop-blur-[0.5px]" />
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto text-center space-y-8 animate-fade-in">
