@@ -12,35 +12,43 @@ export default {
       },
       colors: {
         primary: {
-          50: '#f0f4ff',
-          100: '#e0e9ff',
-          200: '#c7d6ff',
-          300: '#a4b8ff',
-          400: '#7b91ff',
-          500: '#5b6ef5',
-          600: '#4550e8',
-          700: '#3840cc',
-          800: '#3037a5',
-          900: '#2d3483',
+          50: '#FBF9F6',   // warm cream / off-white
+          100: '#F5EFEA',  // soft cream surface
+          200: '#E8DED4',  // light sand
+          300: '#D5C4B4',  // muted taupe
+          400: '#AC8968',  // Warm Beige (Palette: #AC8968)
+          500: '#93785B',  // Taupe/Brown (Palette: #93785B - secondary / borders)
+          600: '#865D36',  // Warm Brown (Palette: #865D36 - primary buttons / active)
+          700: '#6F4B29',  // Deep Warm Brown (hover / focus)
+          800: '#55391F',  // Rich Espresso Brown
+          900: '#3E362E',  // Dark Brown (Palette: #3E362E)
+          950: '#2A241E',  // Deepest Dark Brown
         },
         accent: {
-          50: '#fff7ed',
-          100: '#ffedd5',
-          200: '#fed7aa',
-          300: '#fdba74',
-          400: '#fb923c',
-          500: '#f97316',
-          600: '#ea6a0a',
-          700: '#c2570b',
-          800: '#9a4514',
-          900: '#7c3a13',
+          50: '#FAF8F5',
+          100: '#F3ECE5',
+          200: '#E5D9CC',
+          300: '#C8B5A2',
+          400: '#AC8968',  // Warm Beige (Palette: #AC8968 - highlights / badges)
+          500: '#A69080',  // Light Beige/Grey (Palette: #A69080 - muted text & secondary UI)
+          600: '#93785B',  // Taupe/Brown (Palette: #93785B)
+          700: '#865D36',  // Warm Brown (Palette: #865D36)
+          800: '#5F4228',
+          900: '#3E362E',  // Dark Brown (Palette: #3E362E)
         },
         dark: {
-          900: '#0d0f1a',
-          800: '#141626',
-          700: '#1c1f35',
-          600: '#252847',
-          500: '#2f3258',
+          950: '#231E19',  // Deepest Warm Black/Brown
+          900: '#3E362E',  // Dark Brown (Palette: #3E362E - base dark background)
+          850: '#463D34',  // Slightly elevated surface
+          800: '#4E443A',  // Dark surface / card background
+          700: '#5D5246',  // Elevated cards & borders
+          600: '#6F6254',  // Subtle borders
+          500: '#847565',  // Secondary icons / controls
+          400: '#A69080',  // Light Beige/Grey (Palette: #A69080 - muted text)
+          300: '#C2B1A2',  // Secondary text
+          200: '#DED3C8',  // Light text
+          100: '#EFE7DF',  // Off-white text
+          50: '#FBF9F6',   // Warm off-white
         }
       },
       animation: {

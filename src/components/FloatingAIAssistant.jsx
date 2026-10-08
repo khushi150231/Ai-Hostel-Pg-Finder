@@ -128,8 +128,8 @@ export const FloatingAIAssistant = () => {
       {/* Floating Trigger Button (Bottom-Right) */}
       <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3">
         {!isOpen && (
-          <div className="hidden sm:flex items-center gap-2 bg-white text-blue-900 border border-blue-200 px-3.5 py-1.5 rounded-full shadow-lg text-xs font-semibold animate-bounce shadow-blue-500/10">
-            <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+          <div className="hidden sm:flex items-center gap-2 bg-[#FBF9F6] text-[#3E362E] border border-[#AC8968]/30 px-3.5 py-1.5 rounded-full shadow-lg text-xs font-semibold animate-bounce shadow-black/10">
+            <Sparkles className="w-3.5 h-3.5 text-primary-600" />
             <span>Need hostel help? Ask AI!</span>
           </div>
         )}
@@ -138,40 +138,40 @@ export const FloatingAIAssistant = () => {
           id="floating-ai-button"
           onClick={() => setIsOpen((v) => !v)}
           aria-label="Open AI Hostel Finder Assistant"
-          className="relative group p-3.5 sm:p-4 rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-2xl shadow-blue-600/40 hover:from-blue-700 hover:to-indigo-700 hover:scale-105 active:scale-95 transition-all duration-300 border-2 border-white/80"
+          className="relative group p-3.5 sm:p-4 rounded-full bg-gradient-to-r from-primary-600 to-primary-700 text-white shadow-2xl shadow-primary-900/50 hover:from-primary-700 hover:to-primary-800 hover:scale-105 active:scale-95 transition-all duration-300 border-2 border-white/80"
         >
           {isOpen ? (
             <X className="w-6 h-6 text-white" />
           ) : (
             <div className="relative">
               <Bot className="w-6 h-6 text-white" />
-              <span className="absolute -top-1 -right-1 w-3 h-3 bg-emerald-400 border-2 border-white rounded-full animate-pulse" />
+              <span className="absolute -top-1 -right-1 w-3 h-3 bg-accent-400 border-2 border-white rounded-full animate-pulse" />
             </div>
           )}
         </button>
       </div>
 
-      {/* AI Assistant Modal Window (Clean White & Blue Theme) */}
+      {/* AI Assistant Modal Window (Warm Brown & Cream Theme) */}
       {isOpen && (
         <div
           id="floating-ai-modal"
-          className="fixed bottom-24 right-4 sm:right-6 z-50 w-[92vw] sm:w-[420px] max-h-[82vh] h-[600px] bg-white rounded-3xl shadow-2xl shadow-blue-950/25 border border-blue-100 flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-5 duration-200"
+          className="fixed bottom-24 right-4 sm:right-6 z-50 w-[92vw] sm:w-[420px] max-h-[82vh] h-[600px] bg-[#FAF8F5] rounded-3xl shadow-2xl shadow-black/30 border border-[#AC8968]/30 flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-5 duration-200"
         >
-          {/* Header - Crisp Blue */}
-          <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 p-4 text-white flex items-center justify-between shadow-md">
+          {/* Header - Warm Brown */}
+          <div className="bg-gradient-to-r from-primary-700 via-primary-600 to-primary-800 p-4 text-white flex items-center justify-between shadow-md">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-xl bg-white/15 backdrop-blur-md flex items-center justify-center border border-white/20">
-                <Sparkles className="w-5 h-5 text-blue-100" />
+                <Sparkles className="w-5 h-5 text-primary-200" />
               </div>
               <div>
                 <div className="font-bold text-sm sm:text-base leading-tight flex items-center gap-2">
                   Vadodara AI Hostel Finder
-                  <span className="text-[10px] bg-blue-500/50 text-blue-100 px-2 py-0.5 rounded-full font-medium border border-blue-400/30">
+                  <span className="text-[10px] bg-white/20 text-white px-2 py-0.5 rounded-full font-medium border border-white/30">
                     Live
                   </span>
                 </div>
-                <div className="text-blue-100 text-xs flex items-center gap-1.5 mt-0.5">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                <div className="text-primary-100 text-xs flex items-center gap-1.5 mt-0.5">
+                  <span className="w-2 h-2 rounded-full bg-accent-400"></span>
                   82+ Verified Vadodara Hostels
                 </div>
               </div>
@@ -181,14 +181,14 @@ export const FloatingAIAssistant = () => {
               <button
                 onClick={handleReset}
                 title="Reset Chat"
-                className="p-1.5 text-blue-100 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+                className="p-1.5 text-primary-100 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
               >
                 <RefreshCw className="w-4 h-4" />
               </button>
               <button
                 onClick={() => setIsOpen(false)}
                 title="Close"
-                className="p-1.5 text-blue-100 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+                className="p-1.5 text-primary-100 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -196,8 +196,8 @@ export const FloatingAIAssistant = () => {
           </div>
 
           {/* Quick Suggestions Bar */}
-          <div className="bg-blue-50/60 border-b border-blue-100 px-3 py-2 overflow-x-auto no-scrollbar flex items-center gap-1.5">
-            <span className="text-[11px] font-bold text-blue-900 uppercase tracking-wider whitespace-nowrap pl-1">
+          <div className="bg-[#F5EFEA] border-b border-[#AC8968]/20 px-3 py-2 overflow-x-auto no-scrollbar flex items-center gap-1.5">
+            <span className="text-[11px] font-bold text-primary-900 uppercase tracking-wider whitespace-nowrap pl-1">
               Quick:
             </span>
             {QUICK_PROMPTS.map((p, idx) => (
@@ -205,7 +205,7 @@ export const FloatingAIAssistant = () => {
                 key={idx}
                 onClick={() => handleSend(p)}
                 disabled={loading}
-                className="text-[11px] whitespace-nowrap px-2.5 py-1 rounded-full bg-white text-blue-800 font-medium border border-blue-200 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all shadow-xs"
+                className="text-[11px] whitespace-nowrap px-2.5 py-1 rounded-full bg-white text-primary-800 font-medium border border-primary-200 hover:bg-primary-600 hover:text-white hover:border-primary-600 transition-all shadow-xs"
               >
                 {p}
               </button>
@@ -213,7 +213,7 @@ export const FloatingAIAssistant = () => {
           </div>
 
           {/* Messages Area */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50/50">
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-[#FBF9F6]">
             {messages.map((msg) => (
               <div
                 key={msg.id}
@@ -223,8 +223,8 @@ export const FloatingAIAssistant = () => {
                 <div
                   className={`max-w-[88%] p-3.5 text-xs sm:text-sm leading-relaxed shadow-sm ${
                     msg.sender === 'user'
-                      ? 'bg-blue-600 text-white rounded-2xl rounded-tr-none font-medium'
-                      : 'bg-white text-slate-800 border border-blue-100 rounded-2xl rounded-tl-none'
+                      ? 'bg-primary-600 text-white rounded-2xl rounded-tr-none font-medium'
+                      : 'bg-white text-[#3E362E] border border-[#AC8968]/20 rounded-2xl rounded-tl-none'
                   }`}
                 >
                   <p className="whitespace-pre-line">{msg.text}</p>
@@ -233,8 +233,8 @@ export const FloatingAIAssistant = () => {
                 {/* Recommendations Carousel / Cards */}
                 {msg.recommendations && msg.recommendations.length > 0 && (
                   <div className="w-full mt-2.5 space-y-2">
-                    <div className="text-[11px] font-bold text-blue-900 uppercase tracking-wider flex items-center gap-1 pl-1">
-                      <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+                    <div className="text-[11px] font-bold text-primary-900 uppercase tracking-wider flex items-center gap-1 pl-1">
+                      <Sparkles className="w-3.5 h-3.5 text-primary-600" />
                       Top Recommended Hostels:
                     </div>
 
@@ -242,13 +242,13 @@ export const FloatingAIAssistant = () => {
                       {msg.recommendations.map((hostel) => (
                         <div
                           key={hostel._id || hostel.id}
-                          className="bg-white rounded-xl border border-blue-100 p-2.5 shadow-sm hover:border-blue-400 hover:shadow-md transition-all flex gap-3 group"
+                          className="bg-white rounded-xl border border-[#AC8968]/25 p-2.5 shadow-sm hover:border-primary-500 hover:shadow-md transition-all flex gap-3 group"
                         >
                           {/* Image */}
                           <img
                             src={hostel.images?.[0] || 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=400'}
                             alt={hostel.name}
-                            className="w-20 h-20 rounded-lg object-cover bg-slate-100 flex-shrink-0"
+                            className="w-20 h-20 rounded-lg object-cover bg-primary-50 flex-shrink-0"
                             onError={(e) => {
                               e.target.src = 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=400';
                             }}
@@ -258,16 +258,16 @@ export const FloatingAIAssistant = () => {
                           <div className="flex-1 min-w-0 flex flex-col justify-between">
                             <div>
                               <div className="flex items-center justify-between gap-1">
-                                <h4 className="font-bold text-slate-900 text-xs truncate group-hover:text-blue-600 transition-colors">
+                                <h4 className="font-bold text-[#3E362E] text-xs truncate group-hover:text-primary-600 transition-colors">
                                   {hostel.name}
                                 </h4>
                                 {hostel.verified && (
-                                  <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 flex-shrink-0" />
+                                  <CheckCircle2 className="w-3.5 h-3.5 text-primary-600 flex-shrink-0" />
                                 )}
                               </div>
 
-                              <div className="flex items-center gap-1 text-[11px] text-slate-500 mt-0.5 truncate">
-                                <MapPin className="w-3 h-3 text-slate-400 flex-shrink-0" />
+                              <div className="flex items-center gap-1 text-[11px] text-accent-500 mt-0.5 truncate">
+                                <MapPin className="w-3 h-3 text-accent-400 flex-shrink-0" />
                                 <span>{hostel.address?.area || hostel.location?.area || 'Vadodara'}</span>
                                 {hostel.distanceKm && (
                                   <span>• {hostel.distanceKm} km</span>
@@ -275,10 +275,10 @@ export const FloatingAIAssistant = () => {
                               </div>
                             </div>
 
-                            <div className="flex items-center justify-between mt-1 pt-1 border-t border-slate-100">
-                              <div className="text-xs font-bold text-blue-700">
+                            <div className="flex items-center justify-between mt-1 pt-1 border-t border-primary-100">
+                              <div className="text-xs font-bold text-primary-700">
                                 ₹{(hostel.monthlyRent || hostel.startingPrice || 6000).toLocaleString('en-IN')}
-                                <span className="text-[10px] text-slate-500 font-normal">/mo</span>
+                                <span className="text-[10px] text-accent-500 font-normal">/mo</span>
                               </div>
 
                               <button
@@ -297,7 +297,7 @@ export const FloatingAIAssistant = () => {
                                   }
                                   navigate(`/hostel/${slug}`);
                                 }}
-                                className="inline-flex items-center gap-1 text-[11px] font-semibold text-blue-600 hover:text-blue-800 bg-blue-50 px-2 py-0.5 rounded-md hover:bg-blue-100 transition-colors"
+                                className="inline-flex items-center gap-1 text-[11px] font-semibold text-primary-600 hover:text-primary-800 bg-[#F5EFEA] px-2 py-0.5 rounded-md hover:bg-[#E8DED4] transition-colors"
                               >
                                 View
                                 <ChevronRight className="w-3 h-3" />
@@ -313,8 +313,8 @@ export const FloatingAIAssistant = () => {
             ))}
 
             {loading && (
-              <div className="flex items-center gap-2 p-3 bg-white border border-blue-100 rounded-2xl rounded-tl-none w-fit text-blue-700 text-xs shadow-sm">
-                <Sparkles className="w-4 h-4 animate-spin text-blue-600" />
+              <div className="flex items-center gap-2 p-3 bg-white border border-[#AC8968]/20 rounded-2xl rounded-tl-none w-fit text-primary-700 text-xs shadow-sm">
+                <Sparkles className="w-4 h-4 animate-spin text-primary-600" />
                 <span className="font-medium">Finding best student stays in Vadodara...</span>
               </div>
             )}
@@ -322,7 +322,7 @@ export const FloatingAIAssistant = () => {
           </div>
 
           {/* Bottom Chat Input Form */}
-          <div className="p-3 bg-white border-t border-blue-100">
+          <div className="p-3 bg-white border-t border-[#AC8968]/20">
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -336,18 +336,18 @@ export const FloatingAIAssistant = () => {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask e.g. Single AC room near MSU under 12k..."
-                className="flex-1 bg-slate-50 text-slate-900 placeholder:text-slate-400 border border-blue-200 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all"
+                className="flex-1 bg-[#F5EFEA] text-[#3E362E] placeholder:text-accent-500 border border-[#AC8968]/30 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:bg-white transition-all"
               />
               <button
                 type="submit"
                 disabled={!input.trim() || loading}
-                className="p-2.5 rounded-xl bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-md shadow-blue-600/20"
+                className="p-2.5 rounded-xl bg-primary-600 text-white hover:bg-primary-700 disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-md shadow-primary-900/20"
                 aria-label="Send message"
               >
                 <Send className="w-4 h-4" />
               </button>
             </form>
-            <div className="text-[10px] text-center text-slate-400 mt-1.5">
+            <div className="text-[10px] text-center text-accent-500 mt-1.5">
               Powered by StayNear AI Engine • Real-time Vadodara Hostels
             </div>
           </div>

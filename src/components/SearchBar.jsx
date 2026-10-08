@@ -119,7 +119,7 @@ const SearchBar = ({ onSearch, compact = false }) => {
                   <select
                     value={filters.gender}
                     onChange={(e) => setFilters((p) => ({ ...p, gender: e.target.value }))}
-                    className="bg-transparent text-sm w-full focus:outline-none appearance-none cursor-pointer text-white [&>option]:bg-gray-900"
+                    className="bg-transparent text-sm w-full focus:outline-none appearance-none cursor-pointer text-white [&>option]:bg-dark-900 [&>option]:text-white"
                   >
                     <option value="">Any Gender</option>
                     <option value="boys">Boys</option>
@@ -134,7 +134,7 @@ const SearchBar = ({ onSearch, compact = false }) => {
                   <select
                     value={filters.roomType}
                     onChange={(e) => setFilters((p) => ({ ...p, roomType: e.target.value }))}
-                    className="bg-transparent text-sm w-full focus:outline-none appearance-none cursor-pointer text-white [&>option]:bg-gray-900"
+                    className="bg-transparent text-sm w-full focus:outline-none appearance-none cursor-pointer text-white [&>option]:bg-dark-900 [&>option]:text-white"
                   >
                     <option value="">Any Room Type</option>
                     <option value="single">Single</option>
