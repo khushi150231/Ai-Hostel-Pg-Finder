@@ -4,7 +4,7 @@ An intelligent, full-stack AI-powered Hostel & PG recommendation platform design
 
 ---
 
-##  Key Features
+## 🌟 Key Features
 
 ### 🔍 Smart Search & Exploration
 - **Quick & Natural Language AI Search**: Search by typing prompts like *"AC double sharing PG near MSU under 7000 with wifi and food"*.
